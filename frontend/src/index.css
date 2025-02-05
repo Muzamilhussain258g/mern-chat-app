@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .common-padding {
+        @apply sm:px-10 px-5
+    }
+}
