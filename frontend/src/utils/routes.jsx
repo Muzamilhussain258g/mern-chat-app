@@ -1,4 +1,4 @@
-import { Navigate} from "react-router";
+import { Navigate } from "react-router";
 import { Home, Login, NotFoundPage, Profile, Settings, Signup } from "../pages";
 
 export let routes = (authUser) => ([
@@ -28,4 +28,6 @@ export let routes = (authUser) => ([
   },
 ])
 
-export let validPathsForNavbarRender = ["/", "/profile", "/settings", "/signup", "/login"]
+export let validPathsForNavbarRender = (currPath) => (
+  ["/", "/profile", "/settings", "/signup", "/login"].filter((path) => path === currPath)
+)

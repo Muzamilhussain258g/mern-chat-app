@@ -9,7 +9,7 @@ createRoot(document.getElementById('root')).render(
     <App />
     <ToastContainer className={""}
       position="top-center"
-      autoClose={15000}
+      autoClose={3000}
       hideProgressBar={false}
       newestOnTop={false}
       closeOnClick

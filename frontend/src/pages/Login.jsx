@@ -2,7 +2,7 @@ import React from 'react'
 import { useForm } from 'react-hook-form';
 import { useAuthStore } from '../store/useAuthStore';
 import { Link } from 'react-router';
-import { ColorRing } from 'react-loader-spinner'
+import { Loader } from 'lucide-react';
 
 const Login = () => {
   const { login, isLogingIn } = useAuthStore()
@@ -75,7 +75,7 @@ const Login = () => {
             <div className="form-control mt-6 text-center">
               <button type="submit" className="btn btn-primary">
                 {
-                  isLogingIn ? "dsdf" : 'Login'
+                  isLogingIn ? <Loader className="animate-spin" /> : 'Login'
                 }
               </button>
             </div>

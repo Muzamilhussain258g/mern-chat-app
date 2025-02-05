@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react'
-import { Route, Routes } from 'react-router'
+import { Route, Routes, useLocation } from 'react-router'
 import { routes, validPathsForNavbarRender } from './utils/routes'
 import { useAuthStore } from './store/useAuthStore'
 import { Comment } from "react-loader-spinner"
+import { Navbar } from './components'
 
 const App = () => {
+  const { path } = useLocation()
   const { authUser, isCheckingAuth, checkAuth } = useAuthStore()
 
   useEffect(() => {
@@ -28,6 +30,7 @@ const App = () => {
 
   return (
     <>
+      {validPathsForNavbarRender(path) && <Navbar />}
       <Routes>
         {routes(authUser).map(({ path, element }) => (
           <Route key={path} path={path} element={element} />

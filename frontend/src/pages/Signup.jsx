@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router";
 import { useAuthStore } from "../store/useAuthStore";
 import { ColorRing } from 'react-loader-spinner'
+import { Loader } from "lucide-react";
 
 const Signup = () => {
   const { authUser, signup, isSigningUp } = useAuthStore();
@@ -98,15 +99,7 @@ const Signup = () => {
             <div className="form-control mt-6">
               <button type="submit" className="btn btn-primary">
                 {
-                  isSigningUp ? <ColorRing
-                    visible={true}
-                    height="80"
-                    width="80"
-                    ariaLabel="color-ring-loading"
-                    wrapperStyle={{}}
-                    wrapperClass="color-ring-wrapper"
-                    colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
-                  /> : "Sign Up"
+                  isSigningUp ? <Loader className="animate-spin"/> : "Sign Up"
                 }
               </button>
             </div>
