@@ -50,7 +50,7 @@ const Sidebar = () => {
                 {users.map((user) => (
                     <button
                         key={user._id}
-                        // onClick={}
+                        onClick={(e) => setSelectedUser(user)}
                         className={`
                             w-full p-3 flex items-center gap-3
                             hover:bg-base-300 transition-colors

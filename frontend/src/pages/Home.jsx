@@ -1,7 +1,6 @@
 import { useChatStore } from "../store/useChatStore";
 
-import Sidebar from "../components/Sidebar";
-import { NoChatSelected } from "../components";
+import { ChatContainer, NoChatSelected, Sidebar } from "../components";
 // import NoChatSelected from "../components/NoChatSelected";
 // import ChatContainer from "../components/ChatContainer";
 
@@ -15,8 +14,7 @@ const Home = () => {
           <div className="flex h-full rounded-lg overflow-hidden">
             <Sidebar />
 
-            <NoChatSelected />
-            {/* {!selectedUser ? <NoChatSelected /> : <ChatContainer />} */}
+            {!selectedUser ? <NoChatSelected /> : <ChatContainer />}
           </div>
         </div>
       </div>
