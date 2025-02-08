@@ -75,4 +75,19 @@ export const useAuthStore = create((set, get) => ({
             toast.error("Logout operation failed")
         }
     },
+
+    updateProfile: async (file) => {
+        const formData = new FormData();
+
+        formData.append('avatar', file);
+
+        try {
+            console.log("I am from useauthstore", formData)
+            const res = await axiosInstance.patch("/auth/updateAvatar", formData)
+            toast.success("Profile Updated Successfully");
+            set({ authUser: res?.data?.data })
+        } catch (error) {
+            console.log("Error in upload profile", error)
+        }
+    }
 }))

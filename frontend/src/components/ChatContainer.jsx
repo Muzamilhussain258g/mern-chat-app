@@ -1,5 +1,6 @@
 import { useChatStore } from "../store/useChatStore";
 import { useEffect, useRef } from "react";
+import profile from "../assets/profile.png"
 
 import ChatHeader from "./ChatHeader";
 import MessageInput from "./MessageInput";
@@ -45,8 +46,8 @@ const ChatContainer = () => {
                 <img
                   src={
                     message.senderId === authUser._id
-                      ? authUser.profilePic || "/avatar.png"
-                      : selectedUser.profilePic || "/avatar.png"
+                      ? authUser.profilePic || profile
+                      : selectedUser.profilePic || profile
                   }
                   alt="profile pic"
                 />

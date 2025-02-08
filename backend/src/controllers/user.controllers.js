@@ -127,7 +127,6 @@ const changePassword = asyncHandler(async (req, res) => {
 
 const updateAvatar = asyncHandler(async (req, res) => {
     if (!req.file) throw new ApiError(400, "Avatar is required")
-
     const avatarLocalPath = req.file?.path
 
     let avatar;
