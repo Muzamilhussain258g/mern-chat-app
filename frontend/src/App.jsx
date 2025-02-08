@@ -4,8 +4,10 @@ import { routes, validPathsForNavbarRender } from './utils/routes'
 import { useAuthStore } from './store/useAuthStore'
 import { Comment } from "react-loader-spinner"
 import { Navbar } from './components'
+import { useThemeStore } from './store/useThemeStore'
 
 const App = () => {
+  const { theme } = useThemeStore()
   const { path } = useLocation()
   const { authUser, isCheckingAuth, checkAuth } = useAuthStore()
 
@@ -29,14 +31,14 @@ const App = () => {
   }
 
   return (
-    <>
+    <div data-theme={theme}>
       {validPathsForNavbarRender(path) && <Navbar />}
       <Routes>
         {routes(authUser).map(({ path, element }) => (
           <Route key={path} path={path} element={element} />
         ))}
       </Routes>
-    </>
+    </div>
   )
 }
 
